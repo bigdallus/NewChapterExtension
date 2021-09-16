@@ -50,16 +50,6 @@ chrome.runtime.onConnect.addListener(function(port) {
 	  }
 	});
   }
-  else if (port.name === "keyevent")
-  {
-	port.onMessage.addListener(function(msg) 
-	{
-		if (msg.whitelist === 'get-whitelist')
-		{
-		  GetWhiteList(port);
-		}
-	});	
-  }
 });
 
 Initialise();

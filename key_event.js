@@ -38,14 +38,10 @@ window.onfocus = Focused;
 
 function Focused()
 {
-	chrome.storage.local.get('whitelist', (data) =>
+	chrome.storage.sync.get('whitelist', (data) =>
 	{
 		Object.assign(whitelist, data.whitelist);
 	});
 }
-
-backgroundPort.onMessage.addListener(function(msg) {
-	whitelist = msg.whitelistText;
-});
 
 Focused();
