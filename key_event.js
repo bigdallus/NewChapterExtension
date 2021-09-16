@@ -33,14 +33,11 @@ document.onkeypress = function(evt) {
 	}
 };
 
-window.onfocus = Focused;
-
-function Focused()
+function Initialise()
 {
-	chrome.storage.sync.get('whitelist', (data) =>
-	{
+	chrome.storage.sync.get('whitelist', (data) => {
 		Object.assign(whitelist, data.whitelist);
 	});
 }
 
-Focused();
+Initialise();
