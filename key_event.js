@@ -4,7 +4,6 @@ const chapterRegex = new RegExp('[\\w\\d-]+', 'g');
 const urlRegex = /^(?:https?:\/\/)?(?:[^@\/\n]+@)?(?:www\.)?([^:\/?\n]+)/i;
 
 var whitelist = {};
-var backgroundPort = chrome.runtime.connect({name: "keyevent"});
 
 document.onkeypress = function(evt) {
 	var domain = window.location.href.match(urlRegex)[1]
